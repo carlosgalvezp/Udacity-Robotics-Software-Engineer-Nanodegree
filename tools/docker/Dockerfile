@@ -4,6 +4,8 @@ FROM nvidia/opengl:1.0-glvnd-runtime-ubuntu18.04
 RUN apt-get update && \
     apt-get install --assume-yes --no-install-recommends \
         apt-utils \
+        build-essential \
+        cmake \
         gnupg2 \
         lsb-release \
         wget && \
@@ -17,6 +19,7 @@ RUN echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_releas
     apt-get update && \
     DEBIAN_FRONTEND="noninteractive" \
     apt-get install --assume-yes --no-install-recommends \
-        gazebo11 && \
+        gazebo11 \
+        libgazebo11-dev && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
