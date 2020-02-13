@@ -1,0 +1,22 @@
+FROM ubuntu:18.04
+
+# Install basics
+RUN apt-get update && \
+    apt-get install --assume-yes --no-install-recommends \
+        apt-utils \
+        gnupg2 \
+        lsb-release \
+        wget && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+# Install gazebo
+RUN echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_release -cs` main" > \
+    /etc/apt/sources.list.d/gazebo-stable.list && \
+    wget http://packages.osrfoundation.org/gazebo.key -O - | apt-key add - && \
+    apt-get update && \
+    DEBIAN_FRONTEND="noninteractive" \
+    apt-get install --assume-yes --no-install-recommends \
+        gazebo11 && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
