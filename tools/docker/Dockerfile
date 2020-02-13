@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM nvidia/opengl:1.0-glvnd-runtime-ubuntu18.04
 
 # Install basics
 RUN apt-get update && \
