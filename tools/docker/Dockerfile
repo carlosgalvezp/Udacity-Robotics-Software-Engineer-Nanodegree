@@ -10,6 +10,7 @@ RUN apt-get update && \
         cmake \
         curl \
         gnupg2 \
+        locales \
         lsb-release \
         wget && \
     apt-get clean && \
@@ -25,6 +26,8 @@ RUN echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_releas
         libgazebo9-dev && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
+RUN locale-gen en_US.utf8 && \
+    update-locale
 
 # Install ROS
 RUN echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > \
