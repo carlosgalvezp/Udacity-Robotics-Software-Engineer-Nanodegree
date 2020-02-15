@@ -1,0 +1,17 @@
+{
+    "name": "robotics_nd",
+    "image": "carlosgalvezp/robotics_nd:latest",
+    "runArgs": [
+        "--user", "1000:1000",
+        "--env", "HOME=/tmp/",
+        "--env", "DISPLAY",
+        "--volume", "/etc/passwd:/etc/passwd:ro",
+        "--volume", "/etc/group:/etc/group:ro",
+        "--volume", "/tmp/.X11-unix:/tmp/.X11-unix:rw",
+        "--gpus", "all",
+    ],
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "postCreateCommand": "echo 'source /opt/ros/melodic/setup.bash' >> /tmp/.bashrc"
+}
