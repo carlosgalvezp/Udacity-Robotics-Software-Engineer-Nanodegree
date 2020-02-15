@@ -1,3 +1,6 @@
 [submodule "RSEND_P1_Build_My_World"]
 	path = RSEND_P1_Build_My_World
 	url = git@github.com:carlosgalvezp/RSEND_P1_Build_My_World.git
+[submodule "RSEND_P2_Go_Chase_It"]
+	path = RSEND_P2_Go_Chase_It
+	url = git@github.com:carlosgalvezp/RSEND_P2_Go_Chase_It.git
