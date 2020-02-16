@@ -5,6 +5,7 @@
         "--user", "1000:1000",
         "--env", "HOME=/tmp/",
         "--env", "DISPLAY",
+        "--volume", "/home/${env:USER}/.bashrc/:/tmp/.bashrc_host:ro",
         "--volume", "/etc/passwd:/etc/passwd:ro",
         "--volume", "/etc/group:/etc/group:ro",
         "--volume", "/tmp/.X11-unix:/tmp/.X11-unix:rw",
@@ -13,5 +14,5 @@
     "settings": {
         "terminal.integrated.shell.linux": "/bin/bash"
     },
-    "postCreateCommand": "echo 'source /opt/ros/melodic/setup.bash' >> /tmp/.bashrc"
+    "postCreateCommand": "cp /tmp/.bashrc_host /tmp/.bashrc && echo 'source /opt/ros/melodic/setup.bash' >> /tmp/.bashrc"
 }
