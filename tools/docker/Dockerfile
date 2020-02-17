@@ -47,3 +47,13 @@ RUN echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > \
     rm -rf /var/lib/apt/lists/*
 RUN rosdep init && \
     rosdep update
+
+# Install additional ROS packages
+RUN apt-get update && \
+    apt-get install --assume-yes --no-install-recommends \
+        ros-melodic-navigation \
+        ros-melodic-map-server \
+        ros-melodic-move-base \
+        ros-melodic-amcl && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
