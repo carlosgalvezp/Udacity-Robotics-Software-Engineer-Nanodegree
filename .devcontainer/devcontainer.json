@@ -6,6 +6,7 @@
         "--env", "HOME=/tmp/",
         "--env", "DISPLAY",
         "--volume", "/home/${env:USER}/.bashrc/:/tmp/.bashrc_host:ro",
+        "--volume", "/tmp/:/home/${env:USER}",
         "--volume", "/etc/passwd:/etc/passwd:ro",
         "--volume", "/etc/group:/etc/group:ro",
         "--volume", "/tmp/.X11-unix:/tmp/.X11-unix:rw",
