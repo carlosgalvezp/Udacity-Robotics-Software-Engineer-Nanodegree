@@ -1,6 +1,4 @@
-FROM nvidia/opengl:1.0-glvnd-runtime-ubuntu18.04
-
-ENV DEBIAN_FRONTEND="noninteractive"
+FROM nvidia/opengl:1.1-glvnd-runtime-ubuntu16.04
 
 # Install basics
 RUN apt-get update && \
@@ -22,8 +20,8 @@ RUN echo "deb http://packages.osrfoundation.org/gazebo/ubuntu-stable `lsb_releas
     wget http://packages.osrfoundation.org/gazebo.key -O - | apt-key add - && \
     apt-get update && \
     apt-get install --assume-yes --no-install-recommends \
-        gazebo9 \
-        libgazebo9-dev && \
+        gazebo7 \
+        libgazebo7-dev && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 RUN locale-gen en_US.utf8 && \
@@ -37,7 +35,7 @@ RUN echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > \
     apt-key add - && \
     apt-get update && \
     apt-get install --assume-yes --no-install-recommends \
-        ros-melodic-desktop-full && \
+        ros-kinetic-desktop-full && \
     apt-get install --assume-yes --no-install-recommends \
         python-rosinstall \
         python-rosinstall-generator \
@@ -53,9 +51,9 @@ RUN apt-get update && \
     apt-get install --assume-yes --no-install-recommends \
         libignition-math2-dev \
         protobuf-compiler \
-        ros-melodic-navigation \
-        ros-melodic-map-server \
-        ros-melodic-move-base \
-        ros-melodic-amcl && \
+        ros-kinetic-navigation \
+        ros-kinetic-map-server \
+        ros-kinetic-move-base \
+        ros-kinetic-amcl && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*

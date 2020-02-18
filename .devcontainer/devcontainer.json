@@ -11,9 +11,10 @@
         "--volume", "/etc/group:/etc/group:ro",
         "--volume", "/tmp/.X11-unix:/tmp/.X11-unix:rw",
         "--gpus", "all",
+        "--ipc", "host",  // https://github.com/osrf/docker_images/issues/21
     ],
     "settings": {
         "terminal.integrated.shell.linux": "/bin/bash"
     },
-    "postCreateCommand": "cp /tmp/.bashrc_host /tmp/.bashrc && echo 'source /opt/ros/melodic/setup.bash' >> /tmp/.bashrc"
+    "postCreateCommand": "cp /tmp/.bashrc_host /tmp/.bashrc && echo 'source /opt/ros/kinetic/setup.bash' >> /tmp/.bashrc"
 }
