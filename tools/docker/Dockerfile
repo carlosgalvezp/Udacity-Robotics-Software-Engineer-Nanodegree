@@ -48,9 +48,11 @@ RUN echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > \
 RUN rosdep init && \
     rosdep update
 
-# Install additional ROS packages
+# Install dependencies needed for P3
 RUN apt-get update && \
     apt-get install --assume-yes --no-install-recommends \
+        libignition-math2-dev \
+        protobuf-compiler \
         ros-melodic-navigation \
         ros-melodic-map-server \
         ros-melodic-move-base \
