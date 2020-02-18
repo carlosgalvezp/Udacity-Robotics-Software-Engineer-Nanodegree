@@ -4,6 +4,7 @@
 [submodule "RSEND_P2_Go_Chase_It"]
 	path = RSEND_P2_Go_Chase_It
 	url = git@github.com:carlosgalvezp/RSEND_P2_Go_Chase_It.git
-[submodule "RSEND_P4_Where_Am_I"]
-	path = RSEND_P4_Where_Am_I
-	url = git@github.com:carlosgalvezp/RSEND_P4_Where_Am_I.git
+
+[submodule "RSEND_P3_Where_Am_I"]
+	path = RSEND_P3_Where_Am_I
+	url = git@github.com:carlosgalvezp/RSEND_P3_Where_Am_I.git
