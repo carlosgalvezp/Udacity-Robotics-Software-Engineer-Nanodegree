@@ -8,3 +8,6 @@
 [submodule "RSEND_P3_Where_Am_I"]
 	path = RSEND_P3_Where_Am_I
 	url = git@github.com:carlosgalvezp/RSEND_P3_Where_Am_I.git
+[submodule "RSEND_P4_Map_My_World"]
+	path = RSEND_P4_Map_My_World
+	url = git@github.com:carlosgalvezp/RSEND_P4_Map_My_World.git
