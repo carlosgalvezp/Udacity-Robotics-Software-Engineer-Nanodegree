@@ -62,6 +62,7 @@ RUN apt-get update && \
 # Install dependencies needed for P4
 RUN apt-get update && \
     apt-get install --assume-yes --no-install-recommends \
+        ros-${ROS_VERSION}-teleop-twist-keyboard \
         ros-${ROS_VERSION}-rtabmap-ros && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
