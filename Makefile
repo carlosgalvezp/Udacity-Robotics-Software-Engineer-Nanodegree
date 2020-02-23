@@ -11,7 +11,7 @@ endef
 
 .PHONY: build-docker
 build-docker:
-	docker build --file tools/docker/Dockerfile --tag carlosgalvezp/robotics_nd:latest .
+	docker build --tag carlosgalvezp/robotics_nd:latest tools/docker
 
 .PHONY: gazebo
 gazebo:

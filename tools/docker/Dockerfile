@@ -28,6 +28,7 @@ RUN locale-gen en_US.utf8 && \
     update-locale
 
 # Install ROS
+ARG ROS_VERSION="kinetic"
 RUN echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > \
     /etc/apt/sources.list.d/ros-latest.list && \
     curl -sSL \
@@ -35,7 +36,7 @@ RUN echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > \
     apt-key add - && \
     apt-get update && \
     apt-get install --assume-yes --no-install-recommends \
-        ros-kinetic-desktop-full && \
+        ros-${ROS_VERSION}-desktop-full && \
     apt-get install --assume-yes --no-install-recommends \
         python-rosinstall \
         python-rosinstall-generator \
@@ -51,9 +52,16 @@ RUN apt-get update && \
     apt-get install --assume-yes --no-install-recommends \
         libignition-math2-dev \
         protobuf-compiler \
-        ros-kinetic-navigation \
-        ros-kinetic-map-server \
-        ros-kinetic-move-base \
-        ros-kinetic-amcl && \
+        ros-${ROS_VERSION}-navigation \
+        ros-${ROS_VERSION}-map-server \
+        ros-${ROS_VERSION}-move-base \
+        ros-${ROS_VERSION}-amcl && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+# Install dependencies needed for P4
+RUN apt-get update && \
+    apt-get install --assume-yes --no-install-recommends \
+        ros-${ROS_VERSION}-rtabmap-ros && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
