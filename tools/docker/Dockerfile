@@ -66,3 +66,10 @@ RUN apt-get update && \
         ros-${ROS_VERSION}-rtabmap-ros && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
+
+# Install dependencies needed for P5
+RUN apt-get update && \
+    apt-get install --assume-yes --no-install-recommends \
+        xterm && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
