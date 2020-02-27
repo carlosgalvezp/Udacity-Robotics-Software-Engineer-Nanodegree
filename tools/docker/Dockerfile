@@ -72,6 +72,7 @@ RUN apt-get update && \
     apt-get upgrade --assume-yes && \
     apt-get install --assume-yes --no-install-recommends \
         ros-${ROS_VERSION}-gmapping \
+        ros-${ROS_VERSION}-joy \
         xterm  && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
