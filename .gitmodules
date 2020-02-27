@@ -11,3 +11,6 @@
 [submodule "RSEND_P4_Map_My_World"]
 	path = RSEND_P4_Map_My_World
 	url = git@github.com:carlosgalvezp/RSEND_P4_Map_My_World.git
+[submodule "RSEND_P5_Home_Service_Robot"]
+	path = RSEND_P5_Home_Service_Robot
+	url = git@github.com:carlosgalvezp/RSEND_P5_Home_Service_Robot.git
