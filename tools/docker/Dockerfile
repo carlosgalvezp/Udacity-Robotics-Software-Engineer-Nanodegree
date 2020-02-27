@@ -69,7 +69,9 @@ RUN apt-get update && \
 
 # Install dependencies needed for P5
 RUN apt-get update && \
+    apt-get upgrade --assume-yes && \
     apt-get install --assume-yes --no-install-recommends \
-        xterm && \
+        ros-${ROS_VERSION}-gmapping \
+        xterm  && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
